@@ -187,6 +187,7 @@ void task_7(void) {
 
 void task_8(void) {
     int n;
+    bool div = false;
 
     cout << "Enter natural n: ";
     cin >> n;
@@ -199,8 +200,12 @@ void task_8(void) {
     for (int d=2; d<sqrt(n)+1; d++) {
         if (n % d == 0) {
             cout << n << " has at least one divisor (" << d << ")" << endl;
+            div = true;
             break;
         }
+    }
+    if (!div) {
+        cout << "No divisors in range" << endl;
     }
 
     cout << endl;
